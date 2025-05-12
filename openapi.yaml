@@ -1,0 +1,39 @@
+openapi: 3.0.0
+info:
+  title: Firestore API for Customer Search
+  description: Firestoreに保存された顧客データを検索・取得するためのAPI
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+paths:
+  /customers:
+    get:
+      summary: 顧客一覧を取得
+      description: 顧客データの全件を取得する
+      responses:
+        '200':
+          description: 顧客データの一覧
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /customers/{id}:
+    get:
+      summary: 顧客IDで検索
+      description: 指定したIDの顧客データを取得する
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: 顧客のドキュメントID
+      responses:
+        '200':
+          description: 顧客の詳細情報
+          content:
+            application/json:
+              schema:
+                type: object
