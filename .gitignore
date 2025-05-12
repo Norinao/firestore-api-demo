@@ -134,3 +134,5 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+.env
+c-management-system-type-m-firebase-adminsdk-fbsvc-bfd0d6b17f.json
